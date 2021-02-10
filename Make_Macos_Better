@@ -1,0 +1,35 @@
+Apple has made macos really annoying. Like everytime I try to install app they verify etc. 
+I don't need those as I am not the dumb user. And macos is such a gatekeeper. I tried to 
+install ubuntu but all the driver isssue etc pulled me back. In fact Linux support is so 
+poor. It seems I cannot fight like that. So the solution is just to disable every secure
+related hoax in macos. I understand the implication so I am doing this. If you are not expert
+in this field please don't try this.
+
+Disable SIP in osx
+
+In recovery mode
+```
+csrutil disable
+```
+```
+sudo spctl --master-disable
+```
+
+```
+# Disable the "Are you sure you want to open this application?" dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Disable Disk Image Verification: Verifying ...
+defaults write com.apple.frameworks.diskimages skip-verify -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+```
+
+
+```
+sudo sh -c 'echo "0.0.0.0  ocsp.apple.com" >> /etc/hosts'
+```
+
+
+
+Add terminal and firefox to developer tool in Security . 
